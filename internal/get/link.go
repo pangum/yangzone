@@ -7,7 +7,7 @@ import (
 )
 
 type Link struct {
-	pangu.In
+	pangu.Get
 
 	Client *grpc.Client
 	App    app.Id
