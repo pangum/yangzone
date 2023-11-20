@@ -3,24 +3,25 @@ package core
 import (
 	"context"
 
-	"gitea.com/ruijc/app"
 	"github.com/goexl/gox"
 	"github.com/pangum/grpc"
+	"github.com/pangum/yangzone/internal/internal/constant"
 	"github.com/yangzone/core/link"
 	"github.com/yangzone/protocol"
+	"gitlab.com/ruijc/app/core"
 )
 
 // Link 链接
 type Link struct {
 	protocol.LinkClient
 
-	app app.Id
+	app core.Id
 	_   gox.CannotCopy
 }
 
-func NewLink(client *grpc.Client, app app.Id) *Link {
+func NewLink(client *grpc.Client, app core.Id) *Link {
 	return &Link{
-		LinkClient: protocol.NewLinkClient(client.Connection("yangzone")),
+		LinkClient: protocol.NewLinkClient(client.Connection(constant.LabelYangzone)),
 		app:        app,
 	}
 }

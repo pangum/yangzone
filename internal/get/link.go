@@ -1,14 +1,14 @@
 package get
 
 import (
-	"gitea.com/ruijc/app"
 	"github.com/pangum/grpc"
 	"github.com/pangum/pangu"
+	"gitlab.com/ruijc/app/core"
 )
 
 type Link struct {
 	pangu.Get
 
 	Client *grpc.Client
-	App    app.Id
+	App    core.Id
 }

@@ -5,10 +5,10 @@ import (
 	"github.com/pangum/yangzone/internal/get"
 )
 
-type Creator struct {
-	// 解决命名空间问题
+type Constructor struct {
+	// 构造方法
 }
 
-func (c *Creator) NewLink(get get.Link) *core.Link {
+func (*Constructor) NewLink(get get.Link) *core.Link {
 	return core.NewLink(get.Client, get.App)
 }
