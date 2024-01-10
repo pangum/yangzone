@@ -1,4 +1,4 @@
-package get
+package put
 
 import (
 	"github.com/pangum/grpc"
@@ -7,7 +7,7 @@ import (
 )
 
 type Link struct {
-	pangu.Get
+	pangu.Put
 
 	Client *grpc.Client
 	App    core.Id
